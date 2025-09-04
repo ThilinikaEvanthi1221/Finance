@@ -31,6 +31,7 @@ import {
 import ReactECharts from "echarts-for-react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
+import Spending3D from "./Spending3D";
 
 // Register Chart.js components
 ChartJS.register(
@@ -362,6 +363,7 @@ const FinanceTracker = () => {
             { id: 'transactions', label: 'Transactions', icon: CreditCard },
             { id: 'story', label: 'Story Recap', icon: TrendingUp },
             { id: 'future', label: 'Future You', icon: Calendar },
+            { id: 'spatial', label: '3D Spending', icon: Sparkles },
           ].map(tab => (
             <button
               key={tab.id}
@@ -585,6 +587,14 @@ const FinanceTracker = () => {
     </div>
   </div>
 )}
+
+{activeTab === 'spatial' && (
+  <div className={`${theme.card} p-8 rounded-2xl border shadow-xl transition-all duration-300`}>
+    <h3 className={`text-xl font-bold ${theme.text} mb-6`}>Spending in 3D</h3>
+    <Spending3D data={expensesByCategory} />
+  </div>
+)}
+
 
       </main>
 

@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+.color-empty { fill: #eeeeee; }
+.color-scale-1 { fill: #a7f3d0; } /* light green */
+.color-scale-2 { fill: #34d399; } /* medium green */
+.color-scale-3 { fill: #059669; } /* dark green */
